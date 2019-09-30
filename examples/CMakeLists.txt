@@ -11,7 +11,7 @@ find_package(Boost REQUIRED COMPONENTS chrono system thread)
 
 # +++++++++++++++++++++++++++++++++++++ TORERO THREAD MANAGER +++++++++++++++++++++++++++++++++++++
 # Adding the root directory of torero source tree to your project
-add_subdirectory(${PROJECT_SOURCE_DIR}/.. build)
+add_subdirectory(${PROJECT_SOURCE_DIR}/.. libs)
 
 # -------------------------------------- END ADDING LIBRARIES -------------------------------------
 
