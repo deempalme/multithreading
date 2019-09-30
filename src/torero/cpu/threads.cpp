@@ -11,10 +11,13 @@ namespace torero {
       active_cores_{0u},
       finished_{true}
     {
-      // Getting the total number of threads and removing the currently used by this running program
-      cores_number_ = boost::thread::hardware_concurrency() - 1;
-      if(cores_number_ <= 1) cores_number_ = boost::thread::physical_concurrency() - 1;
+      cores_number_ = boost::thread::hardware_concurrency();
+      if(cores_number_ <= 1) cores_number_ = boost::thread::physical_concurrency();
       if(cores_number_ < 1) cores_number_ = 1;
+    }
+
+    unsigned int threads::multithread_active_threads(){
+      return active_cores_;
     }
 
     void threads::multithread_add_process(boost::function<void (void)> run,
@@ -27,6 +30,8 @@ namespace torero {
         threads::process new_process{ run, ready, protector_pointer };
         awaiting_processes_.push_back(new_process);
         finished_ = false;
+      }else if(!protector_pointer){
+        boost::thread(run).detach();
       }else{
         cpu::threads::process new_process{ run, ready, protector_pointer };
         boost::thread(run).detach();
@@ -40,6 +45,18 @@ namespace torero {
 
     const bool &threads::multithread_all_finished(){
       return finished_;
+    }
+
+    std::size_t threads::multithread_number_of_active_processes(){
+      return active_processes_.size();
+    }
+
+    std::size_t threads::multithread_number_of_awaiting_processes(){
+      return awaiting_processes_.size();
+    }
+
+    unsigned int threads::multithread_number_of_threads(){
+      return cores_number_;
     }
 
     void threads::multithread_update_process(){

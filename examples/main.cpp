@@ -59,6 +59,8 @@ int main(int argc, char *argv[]){
     &variable_protector
   );
 
+  std::cout << "\n   Total threads: " << thread_manager.multithread_number_of_threads() << std::endl;
+
   // Loops while there are pending process
   while(!thread_manager.multithread_all_finished()){
     boost::this_thread::sleep(waiting_time);
