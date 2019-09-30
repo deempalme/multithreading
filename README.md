@@ -18,6 +18,8 @@ ___
    &nbsp; &nbsp; [3.3 Defining a callback function](#section3.3)  
    &nbsp; &nbsp; [3.4 Creating the multithreading object](#section3.4)  
    &nbsp; &nbsp; [3.5 Adding an execution in a new thread](#section3.5)  
+   &nbsp; &nbsp; [3.6 Checking if all concurrent functions have finished](#section3.6)  
+   &nbsp; &nbsp; [3.7 Updating ready callbacks](#section3.7)  
 ___
 <a section="section1"/>
 
