@@ -26,12 +26,12 @@ namespace torero {
       if(cores_number_ == 1){
         run();
         ready();
+      }else if(!protector_pointer){
+        boost::thread(run).detach();
       }else if(active_cores_ >= cores_number_){
         threads::process new_process{ run, ready, protector_pointer };
         awaiting_processes_.push_back(new_process);
         finished_ = false;
-      }else if(!protector_pointer){
-        boost::thread(run).detach();
       }else{
         cpu::threads::process new_process{ run, ready, protector_pointer };
         boost::thread(run).detach();
