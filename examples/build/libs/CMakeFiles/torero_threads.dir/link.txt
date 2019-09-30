@@ -1,2 +1,0 @@
-/usr/bin/ar qc libtorero_threads.a  CMakeFiles/torero_threads.dir/src/torero/cpu/threads.cpp.o
-/usr/bin/ranlib libtorero_threads.a

@@ -1,6 +1,0 @@
-/mnt/shared/Users/framirez/Documents/Qt/multithreading/examples/build/CMakeFiles/rebuild_cache.dir
-/mnt/shared/Users/framirez/Documents/Qt/multithreading/examples/build/CMakeFiles/edit_cache.dir
-/mnt/shared/Users/framirez/Documents/Qt/multithreading/examples/build/CMakeFiles/torero_thread_example.dir
-/mnt/shared/Users/framirez/Documents/Qt/multithreading/examples/build/libs/CMakeFiles/rebuild_cache.dir
-/mnt/shared/Users/framirez/Documents/Qt/multithreading/examples/build/libs/CMakeFiles/edit_cache.dir
-/mnt/shared/Users/framirez/Documents/Qt/multithreading/examples/build/libs/CMakeFiles/torero_threads.dir
