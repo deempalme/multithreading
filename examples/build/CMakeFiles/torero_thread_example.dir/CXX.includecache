@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/shared/Users/framirez/Documents/Qt/multithreading/examples/main.cpp
+torero/cpu/threads.h
+/mnt/shared/Users/framirez/Documents/Qt/multithreading/examples/torero/cpu/threads.h
+boost/bind.hpp
+-
+boost/thread/mutex.hpp
+-
+boost/thread/thread.hpp
+-
+iomanip
+-
+iostream
+-
+
+/mnt/shared/Users/framirez/Documents/Qt/multithreading/include/torero/cpu/threads.h
+boost/function.hpp
+-
+boost/thread/mutex.hpp
+-
+vector
+-
+

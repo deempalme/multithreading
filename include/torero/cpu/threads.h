@@ -13,6 +13,16 @@ namespace torero {
       threads();
 
       /*
+       * ### Returning the total number of currently used threads
+       * 
+       * Returns the number of threads that are currently being used by this multithreading manager.
+       * 
+       * @Returns
+       * {unsigned int} number of currently used threads in your CPU.
+       * 
+       */
+      unsigned int multithread_active_threads();
+      /*
        * ### Adds a new thread
        *
        * This function will add a new thread to execute concurrently or wait until at least one
@@ -49,6 +59,38 @@ namespace torero {
        *
        */
       const bool &multithread_all_finished();
+      /*
+       * ### Returning the number of processes being executed concurrently
+       * 
+       * Returns the total number of active concurrent processes.
+       * 
+       * @Returns
+       * {std::size_t} number of active concurrent processes.
+       * 
+       */
+      std::size_t multithread_number_of_active_processes();
+      /*
+       * ### Returning the number of processes awaiting for execution
+       * 
+       * The total concurrent number of processes cannot be bigger than your number of threads,
+       * the manager will wait until there are free threads to execute the awaiting processes, 
+       * this will return the total number of them.
+       * 
+       * @Returns
+       * {std::size_t} number of awaiting concurrent processes.
+       * 
+       */
+      std::size_t multithread_number_of_awaiting_processes();
+      /*
+       * ### Returning the total number of threads in your computer
+       * 
+       * Returns the number of threads in your CPU.
+       * 
+       * @Returns
+       * {unsigned int} number of threads in your CPU.
+       * 
+       */
+      unsigned int multithread_number_of_threads();
       /*
        * ### Updating the state of concurrent threads
        *
