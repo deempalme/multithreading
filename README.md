@@ -140,7 +140,7 @@ This function will add a new thread to execute concurrently or wait until at lea
   // If you don't want to use a boost::mutex nor the callback function use the following:
   thread_manager.multithread_add_process(
     boost::bind(test_run, parameter_variable_1, referenced_variable, &pointed_variable),
-    boost::bind(test_ready, parameter_variable_1, referenced_variable_2, &pointed_variable_2),
+    0,
     nullptr
   );
 ```
