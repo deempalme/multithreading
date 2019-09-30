@@ -21,6 +21,7 @@ ___
    &nbsp; &nbsp; [3.6 Checking if all concurrent functions have finished](#36-checking-if-all-concurrent-functions-have-finished)  
    &nbsp; &nbsp; [3.7 Updating ready callbacks](#37-updating-ready-callbacks)  
    [4 Example](#4-example)  
+   &nbsp; &nbsp; [4.1 Building the example](#41-building-the-example)  
    [5 Reference guide](#5-reference-guide)  
    &nbsp; &nbsp; [5.1 List of public member functions](#51-list-of-public-member-functions)  
    &nbsp; &nbsp; [5.2 Public member functions](#52-public-member-functions)  
@@ -184,6 +185,24 @@ int main(int argc, char *argv[]){
 ## 4 Example
 
 There is a full running example in the folder [examples](examples/).
+
+### 4.1 Building the example
+
+Open a terminal and go into the [examples](examples/) folder in this repository then, execute the following commands:
+
+```sh
+mkdir build
+cd build
+cmake ../
+# -j8 is an argument to increase compilation speed, it selects how
+# many processor's cores should be used; -j8 will utilize 8 cores, 
+# MAKE SURE you DO NOT select more cores than what you actually have.
+make -j8
+```
+To run the program execute this command:
+```sh
+./torero_thread_example
+```
 
 ## 5 Reference guide
 
