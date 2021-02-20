@@ -1,20 +1,20 @@
 cmake_minimum_required(VERSION 3.1...3.15)
 
-if(NOT TARGET ${TORERO_THREADS_LIB})
-  project(torero_threads
+if(NOT TARGET ${RAMROD_THREADS_LIB})
+  project(RamRodThreads
     VERSION 1.0.0
-    DESCRIPTION "Torero sub-library to manage multithreading"
+    DESCRIPTION "Ramrod library to manage multithreading"
     LANGUAGES CXX
   )
 
-  find_package(Boost REQUIRED COMPONENTS system thread)
-
   set(CPP_SOURCES
-    src/torero/cpu/threads.cpp
+    src/ramrod/cpu/thread.cpp
+    src/ramrod/cpu/threads.cpp
   )
 
   set(HPP_HEADERS
-    include/torero/cpu/threads.h
+    include/ramrod/cpu/thread.h
+    include/ramrod/cpu/threads.h
   )
 
   add_library(${PROJECT_NAME}
@@ -25,11 +25,6 @@ if(NOT TARGET ${TORERO_THREADS_LIB})
   target_include_directories(${PROJECT_NAME}
     PRIVATE
     ${PROJECT_SOURCE_DIR}/include
-    ${Boost_INCLUDE_DIRS}
-  )
-
-  target_link_libraries(${PROJECT_NAME}
-    ${Boost_LIBRARIES}
   )
 
   target_compile_features(${PROJECT_NAME}
@@ -44,10 +39,14 @@ if(NOT TARGET ${TORERO_THREADS_LIB})
     CXX_EXTENSIONS no
   )
 
-  set(TORERO_THREADS_DIRS
+  set(${PROJECT_NAME}_INCLUDE_DIRS
     ${PROJECT_SOURCE_DIR}/include
     CACHE INTERNAL ""
   )
-  set(TORERO_THREADS_LIB ${PROJECT_NAME} CACHE INTERNAL "")
 
-endif(NOT TARGET ${TORERO_THREADS_LIB})
+  set(${PROJECT_NAME}_LIBRARIES
+    ${PROJECT_NAME}
+    CACHE INTERNAL ""
+  )
+
+endif(NOT TARGET ${RAMROD_THREADS_LIB})
