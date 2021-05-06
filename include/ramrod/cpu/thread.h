@@ -15,6 +15,10 @@ namespace ramrod {
       bool check();
 
       void detach();
+
+      std::thread::id id();
+      std::size_t hashed_id();
+
       void join();
 
 

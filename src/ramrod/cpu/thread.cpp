@@ -19,6 +19,14 @@ namespace ramrod {
       thread_->detach();
     }
 
+    std::thread::id thread::id(){
+      return std::this_thread::get_id();
+    }
+
+    std::size_t thread::hashed_id(){
+      return std::hash<std::thread::id>()(std::this_thread::get_id());
+    }
+
     void thread::join(){
       thread_->join();
     }
